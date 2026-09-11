@@ -1,97 +1,97 @@
 # LUNEMI
 
-2D-гра про сумного астронавта на покинутій планеті. Темний платформер-екшн з елементами метроїдванії та сурвайвл-горору: самотній шахтар з киркою, ліхтариком на батарейці та тріснутим шоломом спускається в печери, де світло — головний ресурс, а темрява — головний ворог. Зроблено на Unity 6 (URP 2D).
+A 2D game about a sad astronaut on an abandoned planet. A dark action-platformer with metroidvania and survival-horror elements: a lone miner with a pickaxe, a battery-powered flashlight and a cracked helmet descends into caves where light is the main resource and darkness is the main enemy. Built with Unity 6 (URP 2D).
 
-Ранній 2D-прототип концепції, яка згодом виросла в **Dust Vein** (у налаштуваннях проєкту так і лишилось `productName: Dust Vein`).
+An early 2D prototype of the concept that later grew into **Dust Vein** (the project settings still carry `productName: Dust Vein`).
 
-## Про гру
+## About the game
 
-- **Світло як ресурс.** Ліхтарик (URP `Light2D`) постійно розряджається, поки увімкнений. Розрядився — сидиш у темряві.
-- **Переносний акумулятор.** Затиснув **G** — заряд з акумулятора тече одночасно і в ліхтарик, і в здоров'я гравця. Заряд скінченний.
-- **Станції зарядки.** Тригерні зони з нескінченним джерелом: тримаєш **E** — поповнюються акумулятор, ліхтарик і HP. Фактично — безпечні кімнати / чекпоінти.
-- **Кирка.** Тап по ЛКМ — один удар, затиснув — цикл ударів. Напрямок удару (вперед / вгору / вниз) фіксується на старті замаху за вертикальним вводом. Ламає блоки та б'є ворогів з відкиданням.
-- **Блоки, що ламаються.** Тріснутий спрайт на 50% HP, тряска при ударі, партикли, таблиця луту з шансами і кількістю. Режим `invulnerable` для декоративної породи.
-- **Штовхання ящиків.** ПКМ біля блоку — стійка push, плюс рух у бік блоку — push walk. Колайдер гравця розширюється вперед, а блок плавно скидає масу, **тільки** якщо гравець штовхає його збоку, а не стоїть зверху.
-- **Хапання за уступ.** Два зонди (нижній зайнятий, верхній вільний) під час падіння у бік стіни — гравець хапається, грає анімацію `hug` і плавно вилазить нагору з розрахунком позиції по баунду колайдера.
-- **Стрибок на голову.** Один безкоштовний відскок від ворога за одне приземлення. Друга спроба карається уроном і зісковзуванням.
-- **Ворог Біоморф.** Патруль → агро → атака → смерть. Бачить гравця по лінії зору, пам'ятає його після втрати контакту, обходить з флангу, якщо гравець прямо під ним, чекає приземлення замість того щоб бігти під ноги, перестрибує перешкоди з перевіркою землі за ними і спускається з уступів тільки якщо падіння безпечне.
-- **Гібси й лут.** Ворог спочатку дограє анімацію смерті, і лише потім розлітається на частини, партикли крові та лут. Лут може зникати з часом через стискання.
-- **Горор-фідбек.** Криваві оверлеї пульсують при низькому HP і спалахують при ударі. Шолом на HUD міняє 4 спрайти за станом здоров'я, червоніє й трясеться нижче 30% HP.
-- **Інвентар.** Сітка слотів на **Tab** з drag-and-drop, стаками, злиттям, свопом і привидом іконки під час перетягування. Відкриття інвентаря блокує керування. Предмети підбираються на **E** і летять до гравця, обертаючись і зменшуючись.
-- **Камера.** Cinemachine 3. Затискаєш **W / S** — камера з затримкою виїжджає вгору / вниз, щоб роздивитись темряву попереду. Паралакс-фони.
+- **Light as a resource.** The flashlight (URP `Light2D`) drains constantly while it is on. Once it is empty, you sit in the dark.
+- **Portable charger.** Hold **G** and the charge flows from the battery pack into both the flashlight and the player's health at the same time. The charge is finite.
+- **Charging stations.** Trigger zones with an unlimited source: hold **E** to refill the battery pack, the flashlight and HP. Effectively safe rooms / checkpoints.
+- **Pickaxe.** Tap LMB for a single swing, hold for a swing loop. The attack direction (forward / up / down) is locked at the start of the swing from vertical input. Breaks blocks and hits enemies with knockback.
+- **Breakable blocks.** Cracked sprite at 50% HP, shake on hit, particles, a loot table with drop chances and amounts. An `invulnerable` mode for decorative bedrock.
+- **Pushing crates.** RMB next to a block enters the push stance, adding movement toward the block turns it into push walk. The player's collider widens forward and the block smoothly lowers its mass, but **only** when the player pushes it from the side rather than standing on top.
+- **Ledge grab.** Two probes (lower occupied, upper free) while falling toward a wall. The player grabs the ledge, plays the `hug` animation and smoothly climbs up to a position computed from the collider bounds.
+- **Head bounce.** One free bounce off an enemy per landing. A second attempt is punished with damage and a slide-off.
+- **The Biomorf enemy.** Patrol → aggro → attack → death. Sees the player via line of sight, remembers them after losing contact, flanks when the player is directly below, waits for the player to land instead of running underneath, jumps over obstacles with a landing check and only drops off ledges when the fall is safe.
+- **Gibs and loot.** An enemy first finishes its death animation and only then bursts into parts, blood particles and loot. Loot can shrink and vanish over time.
+- **Horror feedback.** Blood overlays pulse at low HP and flash on hit. The helmet HUD switches between 4 sprites by health state, turns red and shakes below 30% HP.
+- **Inventory.** A slot grid on **Tab** with drag-and-drop, stacks, merging, swapping and a ghost icon while dragging. Opening the inventory locks player control. Items are picked up with **E** and fly to the player while spinning and shrinking.
+- **Camera.** Cinemachine 3. Hold **W / S** and the camera pans up / down after a delay so you can scout the darkness ahead. Parallax backgrounds.
 
-## Керування
+## Controls
 
-| Дія | Клавіша |
+| Action | Key |
 |---|---|
-| Рух | **A / D** |
-| Стрибок | **Space** |
-| Удар киркою (тап / затиснути) | **ЛКМ** |
-| Напрямок удару вгору / вниз | **W / S** під час замаху |
-| Штовхати блок | **ПКМ** біля блоку (+ рух у його бік) |
-| Огляд вгору / вниз | затиснути **W / S** |
-| Ліхтарик | **F** |
-| Переносний акумулятор | затиснути **G** |
-| Станція зарядки / підібрати предмет | **E** |
-| Інвентар | **Tab** |
+| Move | **A / D** |
+| Jump | **Space** |
+| Pickaxe swing (tap / hold) | **LMB** |
+| Aim swing up / down | **W / S** during the swing |
+| Push a block | **RMB** next to a block (+ move toward it) |
+| Look up / down | hold **W / S** |
+| Flashlight | **F** |
+| Portable charger | hold **G** |
+| Charging station / pick up item | **E** |
+| Inventory | **Tab** |
 
-Усі клавіші винесені в інспектор (`KeyCode`), змінюються без правки коду.
+All keys are exposed in the inspector as `KeyCode` fields and can be changed without touching the code.
 
-## Структура скриптів
+## Script structure
 
-Усе лежить в `Assets/Scripts/`:
+Everything lives in `Assets/Scripts/`:
 
-| Скрипт | Що робить |
+| Script | What it does |
 |---|---|
-| `Player/PlayerController.cs` | Рух на Rigidbody2D, стрибок, подвійний raycast землі з відсіканням тригерів і крутих поверхонь, гібридна атака киркою з Animation Event, push / push walk з динамічним колайдером, ledge grab з плавним вилізанням, пил при кроках і приземленні, стан, відкидання, блимання, `TryBounce()` для стрибка на голову, `DisableControl()/EnableControl()` |
-| `Player/PlayerHealth.cs` | HP, урон з позицією атакуючого, смерть (вимикає колізії Player↔Enemy), респавн, хілбар, криваві оверлеї низького HP і спалахи урону, партикли крові |
-| `Player/Flashlight2DController.cs` | Ліхтарик `Light2D` на **F**, батарея з розрядом за секунду, автовимкнення на нулі, іконка на 3 стани, API для зарядки |
-| `Player/PortableCharger2D.cs` | Переносний акумулятор на **G**: заряджає ліхтарик і HP з окремими множниками, трясе іконку, пульсує цілі |
-| `Player/StaticChargingStation2D.cs` | Станція зарядки на **E**: нескінченне джерело для акумулятора, ліхтарика і HP, зміна кольору і пульсація спрайта |
-| `Player/CinemachineLookVertical2D.cs` | Огляд вгору / вниз через `CinemachinePositionComposer.TargetOffset` з затримкою утримання, окремі швидкості туди й назад |
-| `Enemys/EnemyController.cs` | ІІ Біоморфа: патруль з розворотом біля стін і ям, агро по лінії зору й напрямку погляду, пам'ять переслідування, флангова позиція, очікування приземлення гравця, перестрибування перешкод, безпечний спуск, урон через Animation Event, логіка стрибка на голову |
-| `Enemys/EnemyHealth.cs` | HP ворога, спалах кольору, відкидання, партикли удару, таблиця дропу, відкладені гібси після анімації смерті. Тут же спільний `DropAutoDestroy` |
-| `Enemys/EnemyDamageZone.cs` (`EnemyDamage`) | Аура контактного урону по інтервалу в радіусі |
-| `Enemys/DeathTrigger2D.cs` | Зона миттєвої смерті (ями, шипи) з перевіркою тегу і опцією спрацювати один раз |
-| `BreakableBlock.cs` | Блок з HP, тріснутим спрайтом, тряскою, партиклами, таблицею луту та зниженням маси при push walk збоку |
-| `ParallaxEffect.cs` | Паралакс шару фону відносно камери |
-| `UI/HelmetUI.cs` | Шолом-HUD: 4 спрайти за HP, червоний оверлей, тряска нижче 30% і при ударі |
-| `UI/InventoryManager.cs` | Сінглтон інвентаря на **Tab**, `AddItem` зі стаками й переповненням, `MoveOrStackItem` |
-| `UI/InventorySlot.cs` | Слот з drag-and-drop, автопідключення `Background` / `ItemIcon` / `AmountText`, привид іконки |
-| `UI/PickupItem.cs` | Підбір предмета на **E** з польотом до гравця |
-| `UI/ChargingPulseTarget.cs` | Пульсація кольору й масштабу для `Image` / `SpriteRenderer` з кількома джерелами одночасно |
+| `Player/PlayerController.cs` | Rigidbody2D movement, jump, twin ground raycast that ignores triggers and steep surfaces, hybrid pickaxe attack via Animation Event, push / push walk with a dynamic collider, ledge grab with smooth climb, dust on footsteps and landing, stun, knockback, blinking, `TryBounce()` for head bounces, `DisableControl()/EnableControl()` |
+| `Player/PlayerHealth.cs` | HP, damage with attacker position, death (disables Player↔Enemy collisions), respawn, health bar, low-HP blood overlays and damage flashes, blood particles |
+| `Player/Flashlight2DController.cs` | `Light2D` flashlight on **F**, battery with per-second drain, auto shut-off at zero, 3-state icon, charging API |
+| `Player/PortableCharger2D.cs` | Portable charger on **G**: charges the flashlight and HP with separate multipliers, shakes its icon, pulses targets |
+| `Player/StaticChargingStation2D.cs` | Charging station on **E**: unlimited source for the charger, flashlight and HP, sprite color change and pulsing |
+| `Player/CinemachineLookVertical2D.cs` | Look up / down through `CinemachinePositionComposer.TargetOffset` with a hold delay and separate move / return speeds |
+| `Enemys/EnemyController.cs` | Biomorf AI: patrol with turns at walls and pits, aggro by line of sight and facing, chase memory, flanking position, waiting for the player to land, obstacle jumping, safe step-down, damage via Animation Event, head bounce logic |
+| `Enemys/EnemyHealth.cs` | Enemy HP, hurt flash, knockback, hit particles, drop table, deferred gibs after the death animation. Also holds the shared `DropAutoDestroy` helper |
+| `Enemys/EnemyDamageZone.cs` (`EnemyDamage`) | Contact damage aura on an interval within a radius |
+| `Enemys/DeathTrigger2D.cs` | Instant-kill zone (pits, spikes) with a tag check and a trigger-once option |
+| `BreakableBlock.cs` | Block with HP, cracked sprite, shake, particles, loot table and mass reduction on side push walk |
+| `ParallaxEffect.cs` | Parallax of a background layer relative to the camera |
+| `UI/HelmetUI.cs` | Helmet HUD: 4 sprites by HP, red overlay, shake below 30% and on hit |
+| `UI/InventoryManager.cs` | Inventory singleton on **Tab**, `AddItem` with stacks and overflow, `MoveOrStackItem` |
+| `UI/InventorySlot.cs` | Drag-and-drop slot, auto-wires `Background` / `ItemIcon` / `AmountText`, ghost icon |
+| `UI/PickupItem.cs` | Item pickup on **E** with a fly-to-player animation |
+| `UI/ChargingPulseTarget.cs` | Color and scale pulsing for `Image` / `SpriteRenderer` with multiple simultaneous sources |
 
-## Префаби
+## Prefabs
 
-- `Assets/Prefabs/Player.prefab` — гравець з киркою, ліхтариком, шоломом і акумулятором.
-- `Assets/Prefabs/Biomorf/` — ворог `Biomorf`, `Blood` і три `DeadPart` для гібсів.
-- `Assets/Prefabs/Stone block/`, `Assets/Prefabs/Countainer block/` — блоки, що ламаються, та їхні уламки.
-- `Assets/Prefabs/BigCharge.prefab` — предмет-заряд.
+- `Assets/Prefabs/Player.prefab` — the player with pickaxe, flashlight, helmet and charger.
+- `Assets/Prefabs/Biomorf/` — the `Biomorf` enemy, `Blood` and three `DeadPart` gibs.
+- `Assets/Prefabs/Stone block/`, `Assets/Prefabs/Countainer block/` — breakable blocks and their debris.
+- `Assets/Prefabs/BigCharge.prefab` — a charge pickup.
 
-## Шари й теги
+## Layers and tags
 
-- Шари: `Player`, `Ground`, `Enemy`, `Wall`, `Block`, `ChargeStation`, `Item`.
-- Теги: `Player`, `Enemy`.
+- Layers: `Player`, `Ground`, `Enemy`, `Wall`, `Block`, `ChargeStation`, `Item`.
+- Tags: `Player`, `Enemy`.
 
-## Технології
+## Tech stack
 
 - Unity **6000.3.8f1**
 - Universal Render Pipeline 17.3 (2D Renderer, `Light2D`)
 - Cinemachine 3.1.6
 - 2D Animation, Aseprite Importer, PSD Importer, Tilemap
-- Input System 1.18 встановлений, але скрипти працюють на старому `UnityEngine.Input`
-- TextMeshPro для UI
-- Сцени: `Assets/Scenes/Lvl1.unity` (у білді), `Assets/Scenes/Lvl2.unity`, 1920×1080 fullscreen
+- Input System 1.18 is installed, but the scripts run on the legacy `UnityEngine.Input`
+- TextMeshPro for UI
+- Scenes: `Assets/Scenes/Lvl1.unity` (in build), `Assets/Scenes/Lvl2.unity`, 1920×1080 fullscreen
 
-## Як запустити
+## How to run
 
-1. Відкрити папку проєкту в Unity Hub (версія 6000.3.8f1).
-2. Відкрити сцену `Assets/Scenes/Lvl1.unity`.
-3. Play.
+1. Open the project folder in Unity Hub (version 6000.3.8f1).
+2. Open the scene `Assets/Scenes/Lvl1.unity`.
+3. Press Play.
 
-## Ліцензії ассетів
+## Asset licenses
 
-У проєкті використовуються сторонні паки: **Cartoon FX Remaster FREE** (JMO Assets), **Retro Bit FX**, **Dust Particles** та **VFX Pack Impact Wallcoeur Free Version**. Права на них належать їхнім авторам.
+The project uses third-party packs: **Cartoon FX Remaster FREE** (JMO Assets), **Retro Bit FX**, **Dust Particles** and **VFX Pack Impact Wallcoeur Free Version**. All rights belong to their respective authors.
 
 ---
 
