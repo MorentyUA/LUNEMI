@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 15412ff23a1d0e344b834652cb657440
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 303720
+  packageName: Vfx Particles-Dust particles effects
+  packageVersion: 1.0
+  assetPath: Assets/DustParticles/Scripts/ScriptManager.cs
+  uploadId: 712346

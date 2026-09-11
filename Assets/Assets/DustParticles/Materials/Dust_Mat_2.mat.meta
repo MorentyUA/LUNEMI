@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6526aa8e2bd32ab4fb3e0de3dc852e11
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 303720
+  packageName: Vfx Particles-Dust particles effects
+  packageVersion: 1.0
+  assetPath: Assets/DustParticles/Materials/Dust_Mat_2.mat
+  uploadId: 712346

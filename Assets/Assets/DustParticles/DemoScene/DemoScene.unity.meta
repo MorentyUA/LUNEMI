@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 212851acfff7e6b4d8adc74acba6c5b4
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 303720
+  packageName: Vfx Particles-Dust particles effects
+  packageVersion: 1.0
+  assetPath: Assets/DustParticles/DemoScene/DemoScene.unity
+  uploadId: 712346
